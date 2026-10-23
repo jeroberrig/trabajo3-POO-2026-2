@@ -2,7 +2,7 @@
 
 Repositorio POO 2026-2 Universidad: UNIVERSIDAD NACIONAL DE COLOMBIA.
 
-Actividad: Actividad 2: Individual.
+Actividad: Actividad 3: Individual.
 
 Estudiante: Jerónimo Berrio García.
 
