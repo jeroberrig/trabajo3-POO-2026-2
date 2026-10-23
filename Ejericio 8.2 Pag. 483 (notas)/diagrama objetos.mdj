@@ -1,0 +1,202 @@
+{
+  "_type": "Project",
+  "_id": "p1_project",
+  "name": "SistemaNotasObjetos",
+  "ownedElements": [
+    {
+      "_type": "UMLModel",
+      "_id": "m1_model",
+      "_parent": { "$ref": "p1_project" },
+      "name": "Model",
+      "ownedElements": [
+        {
+          "_type": "UMLObjectDiagram",
+          "_id": "d1_diagram",
+          "_parent": { "$ref": "m1_model" },
+          "name": "Diagrama de Objetos Notas",
+          "defaultDiagram": true,
+          "ownedViews": [
+            {
+              "_type": "UMLObjectView",
+              "_id": "v1_obj_app",
+              "_parent": { "$ref": "d1_diagram" },
+              "model": { "$ref": "o1_app" },
+              "font": "Arial;13;0",
+              "left": 50,
+              "top": 100,
+              "width": 120,
+              "height": 40,
+              "nameCompartment": {
+                "_type": "UMLNameCompartmentView",
+                "_id": "v1_name_comp",
+                "_parent": { "$ref": "v1_obj_app" },
+                "model": { "$ref": "o1_app" },
+                "subViews": [
+                  {
+                    "_type": "LabelView",
+                    "_id": "v1_label",
+                    "_parent": { "$ref": "v1_name_comp" },
+                    "font": "Arial;13;4",
+                    "left": 55,
+                    "top": 107,
+                    "width": 110,
+                    "height": 13,
+                    "text": "app : Principal",
+                    "horizontalAlignment": 2
+                  }
+                ]
+              },
+              "slotCompartment": {
+                "_type": "UMLSlotCompartmentView",
+                "_id": "v1_slot_comp",
+                "_parent": { "$ref": "v1_obj_app" },
+                "model": { "$ref": "o1_app" }
+              }
+            },
+            {
+              "_type": "UMLObjectView",
+              "_id": "v2_obj_vent",
+              "_parent": { "$ref": "d1_diagram" },
+              "model": { "$ref": "o2_vent" },
+              "font": "Arial;13;0",
+              "left": 250,
+              "top": 60,
+              "width": 240,
+              "height": 120,
+              "nameCompartment": {
+                "_type": "UMLNameCompartmentView",
+                "_id": "v2_name_comp",
+                "_parent": { "$ref": "v2_obj_vent" },
+                "model": { "$ref": "o2_vent" },
+                "subViews": [
+                  {
+                    "_type": "LabelView",
+                    "_id": "v2_label",
+                    "_parent": { "$ref": "v2_name_comp" },
+                    "font": "Arial;13;4",
+                    "left": 255,
+                    "top": 67,
+                    "width": 230,
+                    "height": 13,
+                    "text": "miVentana : VentanaPrincipal",
+                    "horizontalAlignment": 2
+                  }
+                ]
+              },
+              "slotCompartment": {
+                "_type": "UMLSlotCompartmentView",
+                "_id": "v2_slot_comp",
+                "_parent": { "$ref": "v2_obj_vent" },
+                "model": { "$ref": "o2_vent" }
+              }
+            },
+            {
+              "_type": "UMLObjectView",
+              "_id": "v3_obj_not",
+              "_parent": { "$ref": "d1_diagram" },
+              "model": { "$ref": "o3_not" },
+              "font": "Arial;13;0",
+              "left": 570,
+              "top": 90,
+              "width": 240,
+              "height": 60,
+              "nameCompartment": {
+                "_type": "UMLNameCompartmentView",
+                "_id": "v3_name_comp",
+                "_parent": { "$ref": "v3_obj_not" },
+                "model": { "$ref": "o3_not" },
+                "subViews": [
+                  {
+                    "_type": "LabelView",
+                    "_id": "v3_label",
+                    "_parent": { "$ref": "v3_name_comp" },
+                    "font": "Arial;13;4",
+                    "left": 575,
+                    "top": 97,
+                    "width": 230,
+                    "height": 13,
+                    "text": "notasEstudiante : Notas",
+                    "horizontalAlignment": 2
+                  }
+                ]
+              },
+              "slotCompartment": {
+                "_type": "UMLSlotCompartmentView",
+                "_id": "v3_slot_comp",
+                "_parent": { "$ref": "v3_obj_not" },
+                "model": { "$ref": "o3_not" }
+              }
+            },
+            {
+              "_type": "UMLLinkView",
+              "_id": "vl1_link",
+              "_parent": { "$ref": "d1_diagram" },
+              "model": { "$ref": "l1_link" },
+              "font": "Arial;13;0",
+              "head": { "$ref": "v2_obj_vent" },
+              "tail": { "$ref": "v1_obj_app" },
+              "lineStyle": 1,
+              "points": "170:120;249:120"
+            },
+            {
+              "_type": "UMLLinkView",
+              "_id": "vl2_link",
+              "_parent": { "$ref": "d1_diagram" },
+              "model": { "$ref": "l2_link" },
+              "font": "Arial;13;0",
+              "head": { "$ref": "v3_obj_not" },
+              "tail": { "$ref": "v2_obj_vent" },
+              "lineStyle": 1,
+              "points": "490:120;569:120"
+            }
+          ]
+        },
+        {
+          "_type": "UMLObject",
+          "_id": "o1_app",
+          "_parent": { "$ref": "m1_model" },
+          "name": "app : Principal",
+          "ownedElements": [
+            {
+              "_type": "UMLLink",
+              "_id": "l1_link",
+              "_parent": { "$ref": "o1_app" },
+              "end1": { "_type": "UMLLinkEnd", "_id": "l1e1", "_parent": { "$ref": "l1_link" }, "reference": { "$ref": "o1_app" } },
+              "end2": { "_type": "UMLLinkEnd", "_id": "l1e2", "_parent": { "$ref": "l1_link" }, "reference": { "$ref": "o2_vent" } }
+            }
+          ]
+        },
+        {
+          "_type": "UMLObject",
+          "_id": "o2_vent",
+          "_parent": { "$ref": "m1_model" },
+          "name": "miVentana : VentanaPrincipal",
+          "slots": [
+            { "_type": "UMLSlot", "_id": "s1_v", "_parent": { "$ref": "o2_vent" }, "name": "campo_nota1", "value": "\"4.0\"", "type": "" },
+            { "_type": "UMLSlot", "_id": "s2_v", "_parent": { "$ref": "o2_vent" }, "name": "campo_nota2", "value": "\"3.5\"", "type": "" },
+            { "_type": "UMLSlot", "_id": "s3_v", "_parent": { "$ref": "o2_vent" }, "name": "promedio", "value": "\"Promedio = 4.16\"", "type": "" },
+            { "_type": "UMLSlot", "_id": "s4_v", "_parent": { "$ref": "o2_vent" }, "name": "mayor", "value": "\"Valor mayor = 5.0\"", "type": "" }
+          ],
+          "ownedElements": [
+            {
+              "_type": "UMLLink",
+              "_id": "l2_link",
+              "_parent": { "$ref": "o2_vent" },
+              "end1": { "_type": "UMLLinkEnd", "_id": "l2e1", "_parent": { "$ref": "l2_link" }, "reference": { "$ref": "o2_vent" } },
+              "end2": { "_type": "UMLLinkEnd", "_id": "l2e2", "_parent": { "$ref": "l2_link" }, "reference": { "$ref": "o3_not" } }
+            }
+          ]
+        },
+        {
+          "_type": "UMLObject",
+          "_id": "o3_not",
+          "_parent": { "$ref": "m1_model" },
+          "name": "notasEstudiante : Notas",
+          "slots": [
+            { "_type": "UMLSlot", "_id": "s1_n", "_parent": { "$ref": "o3_not" }, "name": "lista_notas", "value": "[4.0, 3.5, 4.5, 5.0, 3.8]", "type": "" }
+          ]
+        }
+      ]
+    }
+  ]
+}
